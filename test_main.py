@@ -1,5 +1,6 @@
 import requests
 from src.resourses import Base
+import pytest
 
 params = {
     "test_key": "test_value",
@@ -45,8 +46,8 @@ class TestHTTPMethods(Base):
 
 class TestAuth:
     """
-        Simple authorization tests, basic and bearer
-        """
+    Simple authorization tests, basic and bearer
+    """
 
     def test_basic_auth(self):
         user, password = 'test', 'testing'
