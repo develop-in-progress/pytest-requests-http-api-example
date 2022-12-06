@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python -v'
+                sh 'python3 -v'
+                sh 'pip3 install -r requirements.txt'
             }
         }
         stage('Deploy') {
