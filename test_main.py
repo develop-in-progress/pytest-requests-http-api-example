@@ -1,6 +1,7 @@
+import allure
 import requests
 from src.resourses import Base
-import pytest
+
 
 params = {
     "test_key": "test_value",
@@ -14,11 +15,16 @@ class TestHTTPMethods(Base):
     Sending requests and asserts 'ok' status code | json content-type
     """
 
+    @allure.description("""
+    Simple get request test
+    """)
+    @allure.title("Simple get request test")
     def test_get_request(self):
-        link = 'https://httpbin.org/get'
-        self.response = requests.get(link, params=params, timeout=10)
-        self.check_response_and_content()
-        assert self.response.json()['args']['test_key'] == 'test_value'
+        with allure.step('Check get method'):
+            link = 'https://httpbin.org/get'
+            self.response = requests.get(link, params=params, timeout=10)
+            self.check_response_and_content()
+            assert self.response.json()['args']['test_key'] == 'test_value'
 
     def test_post_request(self):
         link = 'https://httpbin.org/post'
