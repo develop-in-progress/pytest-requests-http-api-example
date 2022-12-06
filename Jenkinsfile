@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python3 -v'
+                sh 'python3 --version'
                 sh 'pip3 install -r requirements.txt'
+                sh 'pytest'
             }
         }
         stage('Deploy') {
