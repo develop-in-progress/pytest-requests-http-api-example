@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'python3 --version'
                 sh 'pip3 install -r requirements.txt'
-                sh 'pytest'
+                sh 'python3 -m pytest'
             }
         }
         stage('Deploy') {
