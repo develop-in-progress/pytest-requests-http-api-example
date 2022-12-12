@@ -25,6 +25,7 @@ class TestHTTPMethods(Base):
             self.response = requests.get(link, params=params, timeout=10)
             self.check_response_and_content()
             assert self.response.json()['args']['test_key'] == 'test_value'
+            assert False
 
     def test_post_request(self):
         link = 'https://httpbin.org/post'
