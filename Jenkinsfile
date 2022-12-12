@@ -1,12 +1,10 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
                 echo "Building with ${params.test_value} parameter"
             }
-
         }
         stage('Test') {
             steps {
@@ -34,11 +32,4 @@ pipeline {
             }
         }
     }
-}
-
-pipeline {
-    agent any
-        stages {
-
-        }
 }
