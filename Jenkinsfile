@@ -31,5 +31,10 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        post{
+        always{
+            mail to: "amberlol11x@gmail.com",
+        }
+    }
     }
 }
