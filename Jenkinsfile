@@ -6,11 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "${params.TestParameter} !"
+                echo "Building with ${params.TestParameter} parameter"
             }
-            steps {
-                echo 'Building..'
-            }
+
         }
         stage('Test') {
             steps {
