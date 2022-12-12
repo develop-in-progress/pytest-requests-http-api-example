@@ -36,6 +36,8 @@ pipeline {
     post{
         always{
             mail to: "amberlol11x@gmail.com"
+            subject: "Test Email",
+            body: "Test"
         }
     }
 }
