@@ -1,12 +1,10 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'TestParameter', defaultValue: 'SomeValue', description: 'Some test value')
-    }
+
     stages {
         stage('Build') {
             steps {
-                echo "Building with ${params.TestParameter} parameter"
+                echo "Building with ${params.test_value} parameter"
             }
 
         }
