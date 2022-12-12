@@ -13,19 +13,6 @@ pipeline {
                 sh 'python3 -m pytest --alluredir=allure-results'
             }
         }
-        stage('Reports') {
-            steps {
-            script {
-            allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'allure-results']]
-                    ])
-                }
-                }
-            }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
