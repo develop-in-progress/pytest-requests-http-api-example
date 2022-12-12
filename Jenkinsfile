@@ -1,8 +1,13 @@
 pipeline {
     agent any
-
+    parameters {
+        string(name: 'TestParameter', defaultValue: 'SomeValue', description: 'Some test value')
+    }
     stages {
         stage('Build') {
+            steps {
+                echo "${params.TestParameter} !"
+            }
             steps {
                 echo 'Building..'
             }
